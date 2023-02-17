@@ -126,13 +126,17 @@ char frontend(char arr[4][4]){
 
 //main logic
 void battle(struct coord cood,int arr[4][4],char ary[4][4],int *x ,int *y){
+   
+   
     printf("\nEnter the coordinates (x,y) : ");
     scanf("%d,%d",&cood.x,&cood.y);
-    if(((cood.x<1)||(cood.x>4))||((cood.y<1)||(cood.y>4))){
+   if(((cood.x<1)||(cood.x>4))||((cood.y<1)||(cood.y>4))){
+    do{
         printf("\n\nINVALID INPUT!!! pls enter again");
         printf("\nEnter the coordinates (x,y) : ");
         scanf("%d,%d",&cood.x,&cood.y);
-    }
+    }while(((cood.x<1)||(cood.x>4))||((cood.y<1)||(cood.y>4)));
+}
     printf("\n\n\n");
     if(arr[cood.y-1][cood.x-1]==1){
         arr[cood.y-1][cood.x-1]=0;        //change the 1 to 0 i.e ship is destroyed
